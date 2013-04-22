@@ -1,4 +1,13 @@
 Dorohouse::Application.routes.draw do
+  resources :news
+
+
+  resources :companies
+
+
+  resources :adverts
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
