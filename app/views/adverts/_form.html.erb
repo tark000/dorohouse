@@ -21,27 +21,25 @@
   </div>
   <div class="field">
     <%= f.label :type_id %><br />
-    <%= f.text_field :type_id %>
+    <%= f.select :type_id, @city.unshift("") %>
   </div>
   <div class="field">
     <%= f.label :region_id %><br />
     <%= f.text_field :region_id %>
+    <%= f.select :type_id, @city.unshift("") %>
   </div>
   <div class="field">
     <%= f.label :city_id %><br />
     <%= f.text_field :city_id %>
-  </div>
-  <div class="field">
-    <%= f.label :district %><br />
-    <%= f.text_field :district %>
+    <%= f.select :type_id, @city.unshift("") %>
   </div>
   <div class="field">
     <%= f.label :area %><br />
     <%= f.text_field :area %>
   </div>
   <div class="field">
-    <%= f.label :street %><br />
-    <%= f.text_field :street %>
+    <%= f.label :street_id %><br />
+    <%= f.text_field :street_id %>
   </div>
   <div class="field">
     <%= f.label :house %><br />

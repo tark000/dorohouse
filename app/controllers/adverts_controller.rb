@@ -35,6 +35,10 @@ class AdvertsController < ApplicationController
   # GET /adverts/1/edit
   def edit
     @advert = Advert.find(params[:id])
+    @city = []
+    City.all.each do |city|
+      @city << city.title
+    end
   end
 
   # POST /adverts
