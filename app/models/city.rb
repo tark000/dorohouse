@@ -3,4 +3,5 @@ class City < ActiveRecord::Base
   has_many :city_districts
   has_many :streets
   has_many :adverts
+
 end
