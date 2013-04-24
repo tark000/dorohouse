@@ -1,3 +1,13 @@
+<!-- Contact Details -->
+<div class="large-9 columns">
+
+  <h3>Get in Touch!</h3>
+  <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
+
+  <div class="section-container tabs" data-section>
+    <section class="section">
+      <h5 class="title"><a href="#panel1">Contact Our Company</a></h5>
+      <div class="content" data-slug="panel1">
 <h1>Listing companies</h1>
 
 <table>
@@ -21,7 +31,7 @@
     <td><%= company.phone %></td>
     <td><%= company.mail %></td>
     <td><%= company.site %></td>
-    <td><%= company.image %></td>
+    <td><%= image_tag company.image_url(:company) if company.image? %> </td>
     <td><%= company.description %></td>
     <td><%= link_to 'Show', company %></td>
     <td><%= link_to 'Edit', edit_company_path(company) %></td>
@@ -31,5 +41,31 @@
 </table>
 
 <br />
-
+        <%= will_paginate @posts %>
 <%= link_to 'New Company', new_company_path %>
+
+
+      </div>
+    </section>
+    <section class="section">
+      <h5 class="title"><a href="#panel2">Specific Person</a></h5>
+      <div class="content" data-slug="panel2">
+        <ul class="large-block-grid-5">
+
+
+          <li><a href="mailto:mal@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Mal Reynolds</a></li>
+          <li><a href="mailto:zoe@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Zoe Washburne</a></li>
+          <li><a href="mailto:jayne@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Jayne Cobb</a></li>
+          <li><a href="mailto:doc@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Simon Tam</a></li>
+          <li><a href="mailto:killyouwithmymind@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">River Tam</a></li>
+          <li><a href="mailto:leafonthewind@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Hoban Washburne</a></li>
+          <li><a href="mailto:book@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Shepherd Book</a></li>
+          <li><a href="mailto:klee@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Kaywinnet Lee Fry</a></li>
+          <li><a href="mailto:inara@guild.comp.all"><img src="http://placehold.it/200x200&amp;text=[person]">Inarra Serra</a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- End Contact Details -->

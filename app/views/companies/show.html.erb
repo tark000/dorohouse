@@ -27,7 +27,7 @@
 
 <p>
   <b>Image:</b>
-  <%= @company.image %>
+  <%= image_tag @company.image_url(:thumb) if @company.image? %>
 </p>
 
 <p>

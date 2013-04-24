@@ -1,65 +1,3 @@
-<h1>Listing adverts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Price</th>
-    <th>Type</th>
-    <th>Region</th>
-    <th>City</th>
-    <th>Area</th>
-    <th>Street</th>
-    <th>House</th>
-    <th>City district</th>
-    <th>Room number</th>
-    <th>House type</th>
-    <th>Floor</th>
-    <th>Height</th>
-    <th>State</th>
-    <th>Description</th>
-    <th>Image</th>
-    <th>Layout</th>
-    <th>Video</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @adverts.each do |advert| %>
-  <tr>
-    <td><%= advert.title %></td>
-    <td><%= advert.price %></td>
-    <td><%= advert.type_id %></td>
-    <td><%= advert.region_id %></td>
-    <td><%= advert.city_id %></td>
-    <td><%= advert.area %></td>
-    <td><%= advert.street_id %></td>
-    <td><%= advert.house %></td>
-    <td><%= advert.city_district_id %></td>
-    <td><%= advert.room_number %></td>
-    <td><%= advert.house_type_id %></td>
-    <td><%= advert.floor %></td>
-    <td><%= advert.height %></td>
-    <td><%= advert.state_id %></td>
-    <td><%= advert.description %></td>
-    <td><%= advert.image %></td>
-    <td><%= advert.layout %></td>
-    <td><%= advert.video %></td>
-    <td><%= advert.user_id %></td>
-    <td><%= link_to 'Show', advert %></td>
-    <td><%= link_to 'Edit', edit_advert_path(advert) %></td>
-    <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Advert', new_advert_path %>
-
-
-
 <!-- Contact Details -->
 <div class="large-9 columns">
 
@@ -72,23 +10,42 @@
       <div class="content" data-slug="panel1">
 
 
+ <div class="paginate"> <%= will_paginate @posts %></div>
 
-        <% @adverts.each do |advert| %>
-            <tr>
-              <td><%= advert.title %></td>
-              <td><%= advert.id %></td>
-              <td><%= advert.price %></td>
+<% @posts.each do |post| %>
 
-
-
-              <td><%= link_to 'Show', advert %></td>
-              <td><%= link_to 'Edit', edit_advert_path(advert) %></td>
-              <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-        <% end %>
+  <div class="info_bloc" > <!-- info blok-->
 
 
 
+    <div class="post_title"><%= post.title %></div>
+
+
+    <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
+
+
+    <div class="info_description">
+        <div><%= post.updated_at %>/<%= post.category_id%> </div>
+       <div> <%= truncate(post.description, :length => 135) %> </div>
+
+
+    </div>
+
+    <div class="info_link">
+      <%= link_to 'Show', post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+
+
+  </div><!--End info blok-->
+<% end %>
+
+
+
+<div><%= link_to 'New Post', new_post_path %></div>
+        <div class="paginate"> <%= will_paginate @posts %></div>
 
       </div>
     </section>
