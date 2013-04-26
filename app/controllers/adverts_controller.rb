@@ -26,10 +26,53 @@ class AdvertsController < ApplicationController
   def new
     @advert = Advert.new
 
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @advert }
     end
+
+    @city = []
+    City.all.each do |n|
+      @city << n.title
+    end
+
+    @city_district = []
+    CityDistrict.all.each do |n|
+      @city_district << n.title
+    end
+
+    @house_type = []
+    City.all.each do |n|
+      @house_type << n.title
+    end
+
+    @region = []
+    Region.all.each do |n|
+      @region << n.title
+    end
+
+    @state = []
+    State.all.each do |n|
+      @state << n.title
+    end
+
+    @street = []
+    Street.all.each do |n|
+      @street << n.title
+    end
+
+    @type = []
+    Type.all.each do |n|
+      @type << n.title
+    end
+
+    @user = []
+    User.all.each do |n|
+      @user << n.name
+    end
+
   end
 
 

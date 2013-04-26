@@ -20,8 +20,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+<% end %>
+<%= render 'layouts/top_bar' %>
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
   <%= yield %>
-  
-  <%= javascript_include_tag "application" %>
+
+  <%= render 'layouts/sidebar' %>
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+<%= render 'layouts/footer' %>
+
+<%= javascript_include_tag "application" %>
 </body>
 </html>

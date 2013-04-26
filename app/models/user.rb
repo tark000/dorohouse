@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :pass
-  has_many :adverts
+  has_secure_password
+  attr_accessible :email, :password, :password_confirmation
+
+  validates_uniqueness_of :email
+
+
 end

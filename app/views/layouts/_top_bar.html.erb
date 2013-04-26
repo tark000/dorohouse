@@ -12,11 +12,16 @@
   </ul>
 
   <section class="top-bar-section">
+
     <!-- Right Nav Section -->
     <ul class="right">
       <li><%= link_to 'Недвижимость', adverts_path %></li>
       <li><%= link_to 'Компании', companies_path %></li>
       <li><%= link_to 'Новости', posts_path %></li>
+      <li><%= link_to "Sign up", request.path %></li> or
+      <li><%= link_to "log in", request.path %></li>
+      <li style="color: white;"><%= t = Time.now
+              t.strftime("%y.%m.%d %H:%M ") %></li>
       <li class="divider"></li>
       <li class="has-dropdown">
         <a href="#">Main Item 1</a>
