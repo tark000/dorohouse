@@ -77,7 +77,8 @@
 
 <p>
   <b>Image:</b>
-  <%= @advert.image %>
+  <%= image_tag @advert.image_url(:big) if @advert.image? %>
+
 </p>
 
 <p>
@@ -94,6 +95,25 @@
   <b>User:</b>
   <%= @advert.user_id %>
 </p>
+
+<ol class="questions">
+  <% @advert.advert_images.each do |image| %>
+      <li>
+
+        <%= image_tag image.image_url(:big) if image.image? %>
+      </li>
+  <% end %>
+</ol>
+
+<ol class="questions">
+  <% @advert.layouts.each do |layout| %>
+      <li>
+
+        <%= image_tag layout.image_url(:big) if layout.image? %>
+      </li>
+  <% end %>
+</ol>
+
 
 
 <%= link_to 'Edit', edit_advert_path(@advert) %> |

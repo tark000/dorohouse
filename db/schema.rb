@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424131240) do
+ActiveRecord::Schema.define(:version => 20130426101927) do
+
+  create_table "advert_images", :force => true do |t|
+    t.string   "image"
+    t.string   "advert_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "adverts", :force => true do |t|
     t.string   "title"
@@ -70,13 +77,6 @@ ActiveRecord::Schema.define(:version => 20130424131240) do
 
   create_table "house_types", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "images", :force => true do |t|
-    t.string   "title"
-    t.string   "advert_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

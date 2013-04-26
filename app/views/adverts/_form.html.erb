@@ -21,17 +21,17 @@
   </div>
   <div class="field">
     <%= f.label :type_id %><br />
-    <%= f.select :type_id, @type%>
+    <%= f.text_field :type_id %>
   </div>
   <div class="field">
     <%= f.label :region_id %><br />
     <%= f.text_field :region_id %>
-    <%= f.select :region_id, @region %>
+
   </div>
   <div class="field">
     <%= f.label :city_id %><br />
     <%= f.text_field :city_id %>
-    <%= f.select :city_id, @city %>
+
   </div>
   <div class="field">
     <%= f.label :area %><br />
@@ -40,7 +40,7 @@
   <div class="field">
     <%= f.label :street_id %><br />
     <%= f.text_field :street_id %>
-    <%= f.select :street_id, @street %>
+
   </div>
   <div class="field">
     <%= f.label :house %><br />
@@ -58,7 +58,7 @@
   <div class="field">
     <%= f.label :house_type_id %><br />
     <%= f.text_field :house_type_id %>
-    <%= f.select :house_type_id, @house_type %>
+
   </div>
   <div class="field">
     <%= f.label :floor %><br />
@@ -71,7 +71,7 @@
   <div class="field">
     <%= f.label :state_id %><br />
     <%= f.text_field :state_id %>
-    <%= f.select :state_id, @state %>
+
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -79,7 +79,7 @@
   </div>
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :layout %><br />
@@ -92,8 +92,23 @@
   <div class="field">
     <%= f.label :user_id %><br />
     <%= f.text_field :user_id %>
-    <%= f.select :user_id, @user %>
+
   </div>
+
+  <div class="field">
+    <%= f.fields_for :advert_images do |builder| %>
+        <%= render 'advert_image_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add AdvertImage", f, :advert_images %>
+  </div>
+
+  <div class="field">
+    <%= f.fields_for :layouts do |builder| %>
+        <%= render 'layout_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Layout", f, :layouts %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
