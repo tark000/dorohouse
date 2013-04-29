@@ -12,10 +12,16 @@ Dorohouse::Application.routes.draw do
   resources :sessions
 
 
-
-
   resources :posts
 
+
+  resources :laws, :controller => 'posts'
+  resources :houses, :controller => 'posts'
+  resources :infrastructures, :controller => 'posts'
+  resources :bank_companies, :controller => 'company'
+  resources :build_shop_companies, :controller => 'company'
+  resources :builder_companies, :controller => 'company'
+  resources :realtor_companies, :controller => 'company'
 
   resources :companies
 

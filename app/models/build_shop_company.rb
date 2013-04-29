@@ -1,0 +1,2 @@
+class BuildShopCompany < Company
+end

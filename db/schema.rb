@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426101927) do
+ActiveRecord::Schema.define(:version => 20130429110258) do
 
   create_table "advert_images", :force => true do |t|
     t.string   "image"
@@ -42,12 +42,7 @@ ActiveRecord::Schema.define(:version => 20130426101927) do
     t.string   "user_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-  end
-
-  create_table "categories", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "type"
   end
 
   create_table "cities", :force => true do |t|
@@ -73,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130426101927) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "type"
   end
 
   create_table "house_types", :force => true do |t|
@@ -88,6 +84,13 @@ ActiveRecord::Schema.define(:version => 20130426101927) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "post_images", :force => true do |t|
+    t.string   "image"
+    t.string   "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -95,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20130426101927) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "category_id"
+    t.string   "type"
   end
 
   create_table "regions", :force => true do |t|

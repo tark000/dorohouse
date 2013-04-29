@@ -1,0 +1,2 @@
+class BankCompany < Company
+end

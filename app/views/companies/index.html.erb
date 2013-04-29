@@ -1,12 +1,11 @@
 <!-- Contact Details -->
 <div class="large-9 columns">
 
-  <h3>Get in Touch!</h3>
-  <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
+
 
   <div class="section-container tabs" data-section>
     <section class="section">
-      <h5 class="title"><a href="#panel1">Contact Our Company</a></h5>
+      <h5 class="title"><a href="#panel1">All</a></h5>
       <div class="content" data-slug="panel1">
 <h1>Listing companies</h1>
 
@@ -33,6 +32,7 @@
     <td><%= company.site %></td>
     <td><%= image_tag company.image_url(:company) if company.image? %> </td>
     <td><%= company.description %></td>
+    <td><%= company.type %></td>
     <td><%= link_to 'Show', company %></td>
     <td><%= link_to 'Edit', edit_company_path(company) %></td>
     <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,6 +47,202 @@
 
       </div>
     </section>
+
+
+
+
+
+    <section class="section">
+      <h5 class="title"><a href="#panel1">Строительные компании</a></h5>
+      <div class="content" data-slug="panel1">
+        <h1>Listing companies</h1>
+
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Mail</th>
+            <th>Site</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <% @builder.each do |company| %>
+              <tr>
+                <td><%= company.title %></td>
+                <td><%= company.address %></td>
+                <td><%= company.phone %></td>
+                <td><%= company.mail %></td>
+                <td><%= company.site %></td>
+                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
+                <td><%= company.description %></td>
+                <td><%= company.type %></td>
+                <td><%= link_to 'Show', company %></td>
+                <td><%= link_to 'Edit', edit_company_path(company) %></td>
+                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+        </table>
+
+        <br />
+        <%= will_paginate @posts %>
+        <%= link_to 'New Company', new_company_path %>
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="section">
+      <h5 class="title"><a href="#panel1">Риэлторские компании</a></h5>
+      <div class="content" data-slug="panel1">
+        <h1>Listing companies</h1>
+
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Mail</th>
+            <th>Site</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <% @realtor.each do |company| %>
+              <tr>
+                <td><%= company.title %></td>
+                <td><%= company.address %></td>
+                <td><%= company.phone %></td>
+                <td><%= company.mail %></td>
+                <td><%= company.site %></td>
+                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
+                <td><%= company.description %></td>
+                <td><%= company.type %></td>
+                <td><%= link_to 'Show', company %></td>
+                <td><%= link_to 'Edit', edit_company_path(company) %></td>
+                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+        </table>
+
+        <br />
+        <%= will_paginate @posts %>
+        <%= link_to 'New Company', new_company_path %>
+
+
+      </div>
+    </section>
+
+
+
+
+    <section class="section">
+      <h5 class="title"><a href="#panel1">Банки и Кредиты</a></h5>
+      <div class="content" data-slug="panel1">
+        <h1>Listing companies</h1>
+
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Mail</th>
+            <th>Site</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <% @banks.each do |company| %>
+              <tr>
+                <td><%= company.title %></td>
+                <td><%= company.address %></td>
+                <td><%= company.phone %></td>
+                <td><%= company.mail %></td>
+                <td><%= company.site %></td>
+                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
+                <td><%= company.description %></td>
+                <td><%= company.type %></td>
+                <td><%= link_to 'Show', company %></td>
+                <td><%= link_to 'Edit', edit_company_path(company) %></td>
+                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+        </table>
+
+        <br />
+        <%= will_paginate @posts %>
+        <%= link_to 'New Company', new_company_path %>
+
+
+      </div>
+    </section>
+
+
+
+
+
+    <section class="section">
+      <h5 class="title"><a href="#panel1">Строительные магазины</a></h5>
+      <div class="content" data-slug="panel1">
+        <h1>Listing companies</h1>
+
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Mail</th>
+            <th>Site</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <% @shops.each do |company| %>
+              <tr>
+                <td><%= company.title %></td>
+                <td><%= company.address %></td>
+                <td><%= company.phone %></td>
+                <td><%= company.mail %></td>
+                <td><%= company.site %></td>
+                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
+                <td><%= company.description %></td>
+                <td><%= company.type %></td>
+                <td><%= link_to 'Show', company %></td>
+                <td><%= link_to 'Edit', edit_company_path(company) %></td>
+                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+        </table>
+
+        <br />
+        <%= will_paginate @posts %>
+        <%= link_to 'New Company', new_company_path %>
+
+
+      </div>
+    </section>
+
+
+
     <section class="section">
       <h5 class="title"><a href="#panel2">Specific Person</a></h5>
       <div class="content" data-slug="panel2">
