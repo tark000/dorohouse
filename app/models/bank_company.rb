@@ -1,2 +1,0 @@
-class BankCompany < Company
-end

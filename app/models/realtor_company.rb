@@ -1,2 +1,0 @@
-class RealtorCompany < Company
-end

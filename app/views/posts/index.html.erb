@@ -18,7 +18,7 @@
               <div class="post_title"><%= post.title %></div>
               <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
               <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category_id%> </div>
+                <div><%= post.updated_at %>/<%= post.category%> </div>
                 <div> <%= truncate(post.description, :length => 135) %> </div>
               </div>
                          <div class="info_link">
@@ -48,7 +48,7 @@
               <div class="post_title"><%= post.title %></div>
               <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
               <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category_id%> </div>
+                <div><%= post.updated_at %>/<%= post.category%> </div>
                 <div> <%= truncate(post.description, :length => 135) %> </div>
               </div>
               <div class="info_link">
@@ -78,7 +78,7 @@
               <div class="post_title"><%= post.title %></div>
               <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
               <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category_id%> </div>
+                <div><%= post.updated_at %>/<%= post.category%> </div>
                 <div> <%= truncate(post.description, :length => 135) %> </div>
               </div>
               <div class="info_link">
@@ -108,7 +108,7 @@
               <div class="post_title"><%= post.title %></div>
               <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
               <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category_id%> </div>
+                <div><%= post.updated_at %>/<%= post.category%> </div>
                 <div> <%= truncate(post.description, :length => 135) %> </div>
               </div>
               <div class="info_link">

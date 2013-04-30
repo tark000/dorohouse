@@ -1,2 +1,0 @@
-class House < Post
-end

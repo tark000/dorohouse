@@ -3,11 +3,10 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.paginate(:per_page => 3, :page => params[:page])
-    @builder = BuilderCompany.paginate(:per_page => 3, :page => params[:page])
-    @realtor = RealtorCompany.paginate(:per_page => 3, :page => params[:page])
-    @banks = BankCompany.paginate(:per_page => 3, :page => params[:page])
-    @shops = BuildShopCompany.paginate(:per_page => 3, :page => params[:page])
-
+    @builder = Company.where(:category => 'Builder company').paginate(:per_page => 3, :page => params[:page])
+    @realtor = Company.where(:category => 'Realtor company').paginate(:per_page => 3, :page => params[:page])
+    @banks = Company.where(:category => 'Banks & Credit').paginate(:per_page => 3, :page => params[:page])
+    @shops = Company.where(:category => 'Build Shop').paginate(:per_page => 3, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @companies }

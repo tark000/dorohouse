@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429110258) do
+ActiveRecord::Schema.define(:version => 20130430095317) do
 
   create_table "advert_images", :force => true do |t|
     t.string   "image"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20130429110258) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "type"
+    t.string   "category"
   end
 
   create_table "house_types", :force => true do |t|
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20130429110258) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "category_id"
-    t.string   "type"
+    t.string   "category"
   end
 
   create_table "regions", :force => true do |t|

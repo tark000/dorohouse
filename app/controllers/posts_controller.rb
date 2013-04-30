@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.paginate(:per_page => 3, :page => params[:page])
-    @laws = Law.paginate(:per_page => 3, :page => params[:page])
-    @infostr_posts = Infrastructure.paginate(:per_page => 3, :page => params[:page])
-    @houses = House.paginate(:per_page => 3, :page => params[:page])
+    @laws = Post.where(:category => "Infrastructure Kiev").paginate(:per_page => 3, :page => params[:page])
+    @infostr_posts = Post.where(:category => "Real estate in Kiev").paginate(:per_page => 3, :page => params[:page])
+    @houses = Post.where(:category => "Building Law").paginate(:per_page => 3, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

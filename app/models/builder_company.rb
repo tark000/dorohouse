@@ -1,2 +1,0 @@
-class BuilderCompany < Company
-end

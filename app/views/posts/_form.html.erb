@@ -24,8 +24,8 @@
     <%= f.file_field :image %>
   </div>
     <div class="field">
-      <%= f.label :type %><br />
-      <%= f.text_field :type %>
+      <%= f.label :category %><br />
+      <%= f.select :category, ["Infrastructure Kiev","Real estate in Kiev","Building Law"] %>
     </div>
   <div class="actions">
     <%= f.submit %>
