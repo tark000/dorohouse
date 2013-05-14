@@ -12,7 +12,7 @@
 
 <p>
   <b>Type:</b>
-  <%= @advert.type_id %>
+  <%= @advert.function_type_id %>
 </p>
 
 <p>
@@ -95,6 +95,11 @@
   <b>User:</b>
   <%= @advert.user_id %>
 </p>
+<p>
+  <b>Category:</b>
+  <%= @advert.category %>
+</p>
+
 
 <ol class="questions">
   <% @advert.advert_images.each do |image| %>

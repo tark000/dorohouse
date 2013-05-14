@@ -9,6 +9,7 @@ gem 'mysql2'
 gem "rmagick"
 gem "carrierwave"
 gem 'will_paginate', '3.0'
+gem 'jquery-rails'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 # Gems used only for assets and not required

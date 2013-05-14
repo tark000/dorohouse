@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Title</th>
+    <th> <%=  link_to  'Title', :sort => "name"%></th>
     <th>Price</th>
     <th>Type</th>
     <th>Region</th>
@@ -30,7 +30,7 @@
   <tr>
     <td><%= advert.title %></td>
     <td><%= advert.price %></td>
-    <td><%= advert.type_id %></td>
+    <td><%= advert.function_type_id %></td>
     <td><%= advert.region_id %></td>
     <td><%= advert.city_id %></td>
     <td><%= advert.area %></td>
@@ -66,35 +66,38 @@
   <h3>Get in Touch!</h3>
   <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
 
+  <dl class="sub-nav">
+    <dt>Filter:</dt>
+
+    <dd class="active"><%= link_to "All", adverts_path(:rend => "all") %></dd>
+    <dd><%= link_to "Комерческая недвижимость", adverts_path(:rend => "commercial")%></dd>
+    <dd><%= link_to "Квартиры", adverts_path(:rend => "apartment")%></dd>
+    <dd><%= link_to "Дома", adverts_path(:rend => "home")%></dd>
+    <dd><%= link_to "Земля", adverts_path(:rend => "land")%></dd>
+
+  </dl>
+
+
+
+  <%= render @rend %>
+
+
+
+
   <div class="section-container tabs" data-section>
+
     <section class="section">
-      <h5 class="title"><a href="#panel1">Contact Our Company</a></h5>
-      <div class="content" data-slug="panel1">
-
-
-
-        <% @adverts.each do |advert| %>
-            <tr>
-              <td><%= advert.title %></td>
-              <td><%= advert.id %></td>
-              <td><%= advert.price %></td>
-
-
-
-              <td><%= link_to 'Show', advert %></td>
-              <td><%= link_to 'Edit', edit_advert_path(advert) %></td>
-              <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-        <% end %>
-
+      <h5 class="title"> <%= link_to 'all', "#panel0" %></h5>
+      <div class="content" data-slug="panel0">
 
 
 
       </div>
     </section>
+
     <section class="section">
-      <h5 class="title"><a href="#panel2">Specific Person</a></h5>
-      <div class="content" data-slug="panel2">
+      <h5 class="title"><a href="#panel3">Specific Person</a></h5>
+      <div class="content" data-slug="panel3">
         <ul class="large-block-grid-5">
           <li><a href="mailto:mal@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Mal Reynolds</a></li>
           <li><a href="mailto:zoe@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Zoe Washburne</a></li>

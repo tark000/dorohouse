@@ -1,8 +1,17 @@
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
+
+  helper_method :sort_column, :sort_direction
   def index
-    @adverts = Advert.all
+    @adverts = Advert.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
+    @l_rooms = Advert.advert_category("LivingRoom").search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
+    @n_l_rooms = Advert.advert_category("NotLivingRoom").search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
+    if params[:rend] == nil
+      @rend = "all"
+    else
+      @rend = params[:rend]
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -86,5 +95,16 @@ class AdvertsController < ApplicationController
       format.html { redirect_to adverts_url }
       format.json { head :no_content }
     end
+  end
+
+
+  private
+
+  def sort_column
+     params[:sort] || "title"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 end

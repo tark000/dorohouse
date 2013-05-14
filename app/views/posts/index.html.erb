@@ -4,13 +4,13 @@
 
   <div class="section-container tabs" data-section>
     <section class="section">
-
+      <div class="paginate"> <%= will_paginate @posts %></div>
 
       <h5 class="title"><a href="#panel1">All</a></h5>
       <div class="content" data-slug="panel1">
 
 
-        <div class="paginate"> <%= will_paginate @posts %></div>
+
 
         <% @posts.each do |post| %>
 
@@ -29,15 +29,15 @@
             </div><!--End info blok-->
         <% end %>
         <div><%= link_to 'New Post', new_post_path %></div>
-        <div class="paginate"> <%= will_paginate @posts %></div>
+
        </div>
     </section>
 
     <section class="section">
 
 
-      <h5 class="title"><a href="#panel1">Инфраструктура Киева</a></h5>
-      <div class="content" data-slug="panel1">
+      <h5 class="title"><a href="#panel2">Инфраструктура Киева</a></h5>
+      <div class="content" data-slug="panel2">
 
 
         <div class="paginate"> <%= will_paginate @posts %></div>
@@ -66,8 +66,8 @@
     <section class="section">
 
 
-      <h5 class="title"><a href="#panel1">Недвижимость Киева</a></h5>
-      <div class="content" data-slug="panel1">
+      <h5 class="title"><a href="#panel3">Недвижимость Киева</a></h5>
+      <div class="content" data-slug="panel3">
 
 
         <div class="paginate"> <%= will_paginate @posts %></div>
@@ -96,8 +96,8 @@
     <section class="section">
 
 
-      <h5 class="title"><a href="#panel1">Строительное законодательство</a></h5>
-      <div class="content" data-slug="panel1">
+      <h5 class="title"><a href="#panel4">Строительное законодательство</a></h5>
+      <div class="content" data-slug="panel4">
 
 
         <div class="paginate"> <%= will_paginate @posts %></div>
@@ -128,8 +128,8 @@
 
 
     <section class="section">
-    <h5 class="title"><a href="#panel2">Specific Person</a></h5>
-      <div class="content" data-slug="panel2">
+    <h5 class="title"><a href="#panel5">Specific Person</a></h5>
+      <div class="content" data-slug="panel5">
         <ul class="large-block-grid-5">
           <li><a href="mailto:mal@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Mal Reynolds</a></li>
           <li><a href="mailto:zoe@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Zoe Washburne</a></li>
@@ -143,6 +143,7 @@
         </ul>
       </div>
     </section>
+    <div class="paginate"> <%= will_paginate @posts %></div>
   </div>
 </div>
 

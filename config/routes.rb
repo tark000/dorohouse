@@ -23,6 +23,10 @@ Dorohouse::Application.routes.draw do
 
   resources :adverts
 
+  resources :living_rooms, :controller => 'adverts'
+  resources :not_living_rooms, :controller => 'adverts'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

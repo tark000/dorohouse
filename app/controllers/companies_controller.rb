@@ -2,11 +2,12 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.paginate(:per_page => 3, :page => params[:page])
-    @builder = Company.where(:category => 'Builder company').paginate(:per_page => 3, :page => params[:page])
-    @realtor = Company.where(:category => 'Realtor company').paginate(:per_page => 3, :page => params[:page])
-    @banks = Company.where(:category => 'Banks & Credit').paginate(:per_page => 3, :page => params[:page])
-    @shops = Company.where(:category => 'Build Shop').paginate(:per_page => 3, :page => params[:page])
+    @companies = Company.all_pagin(params[:page])
+    @builder = Company.pagin(params[:page],'Builder company')
+    @realtor = Company.pagin(params[:page],'Realtor company')
+    @banks = Company.pagin(params[:page],'Banks & Credit')
+    @shops = Company.pagin(params[:page],'Build Shop')
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @companies }
