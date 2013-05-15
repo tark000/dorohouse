@@ -8,7 +8,11 @@ class PostsController < ApplicationController
     @laws = Post.pagin(params[:page], "Infrastructure Kiev")
     @infostr_posts = Post.pagin(params[:page], "Real estate in Kiev")
     @houses = Post.pagin(params[:page], "Building Law")
-
+    if params[:rend] == nil
+      @rend = "all"
+    else
+      @rend = params[:rend]
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }

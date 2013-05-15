@@ -1,0 +1,25 @@
+<h5 class="title"><a href="#panel3">Недвижимость Киева</a></h5>
+<div class="content" data-slug="panel3">
+
+
+  <div class="paginate"> <%= will_paginate @posts %></div>
+
+  <% @infostr_posts .each do |post| %>
+
+      <div class="info_bloc" > <!-- info blok-->
+        <div class="post_title"><%= post.title %></div>
+        <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
+        <div class="info_description">
+          <div><%= post.updated_at %>/<%= post.category%> </div>
+          <div> <%= truncate(post.description, :length => 135) %> </div>
+        </div>
+        <div class="info_link">
+          <%= link_to 'Show', post %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div><!--End info blok-->
+  <% end %>
+  <div><%= link_to 'New Post', new_post_path %></div>
+  <div class="paginate"> <%= will_paginate @posts %></div>
+</div>

@@ -12,7 +12,7 @@
 
 <p>
   <b>Type:</b>
-  <%= @advert.function_type_id %>
+  <%= @advert.function_type.title %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <b>City:</b>
-  <%= @advert.city_id %>
+  <%= @advert.city.title %>
 </p>
 
 <p>
@@ -32,7 +32,7 @@
 
 <p>
   <b>Street:</b>
-  <%= @advert.street_id %>
+  <%= @advert.street.title %>
 </p>
 
 <p>
@@ -42,7 +42,7 @@
 
 <p>
   <b>City district:</b>
-  <%= @advert.city_district_id %>
+  <%= @advert.city_district.title %>
 </p>
 
 <p>
@@ -93,7 +93,7 @@
 
 <p>
   <b>User:</b>
-  <%= @advert.user_id %>
+  <%= @advert.user.email %>
 </p>
 <p>
   <b>Category:</b>

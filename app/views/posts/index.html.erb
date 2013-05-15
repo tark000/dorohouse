@@ -2,149 +2,20 @@
 <div class="large-9 columns">
 
 
-  <div class="section-container tabs" data-section>
-    <section class="section">
-      <div class="paginate"> <%= will_paginate @posts %></div>
+  <dl class="sub-nav">
 
-      <h5 class="title"><a href="#panel1">All</a></h5>
-      <div class="content" data-slug="panel1">
-
-
-
-
-        <% @posts.each do |post| %>
-
-            <div class="info_bloc" > <!-- info blok-->
-              <div class="post_title"><%= post.title %></div>
-              <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
-              <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category%> </div>
-                <div> <%= truncate(post.description, :length => 135) %> </div>
-              </div>
-                         <div class="info_link">
-                <%= link_to 'Show', post %>
-                <%= link_to 'Edit', edit_post_path(post) %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </div><!--End info blok-->
-        <% end %>
-        <div><%= link_to 'New Post', new_post_path %></div>
-
-       </div>
-    </section>
-
-    <section class="section">
-
-
-      <h5 class="title"><a href="#panel2">Инфраструктура Киева</a></h5>
-      <div class="content" data-slug="panel2">
-
-
-        <div class="paginate"> <%= will_paginate @posts %></div>
-
-        <% @laws.each do |post| %>
-
-            <div class="info_bloc" > <!-- info blok-->
-              <div class="post_title"><%= post.title %></div>
-              <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
-              <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category%> </div>
-                <div> <%= truncate(post.description, :length => 135) %> </div>
-              </div>
-              <div class="info_link">
-                <%= link_to 'Show', post %>
-                <%= link_to 'Edit', edit_post_path(post) %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </div><!--End info blok-->
-        <% end %>
-        <div><%= link_to 'New Post', new_post_path %></div>
-        <div class="paginate"> <%= will_paginate @posts %></div>
-      </div>
-    </section>
-
-    <section class="section">
-
-
-      <h5 class="title"><a href="#panel3">Недвижимость Киева</a></h5>
-      <div class="content" data-slug="panel3">
-
-
-        <div class="paginate"> <%= will_paginate @posts %></div>
-
-        <% @infostr_posts .each do |post| %>
-
-            <div class="info_bloc" > <!-- info blok-->
-              <div class="post_title"><%= post.title %></div>
-              <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
-              <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category%> </div>
-                <div> <%= truncate(post.description, :length => 135) %> </div>
-              </div>
-              <div class="info_link">
-                <%= link_to 'Show', post %>
-                <%= link_to 'Edit', edit_post_path(post) %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </div><!--End info blok-->
-        <% end %>
-        <div><%= link_to 'New Post', new_post_path %></div>
-        <div class="paginate"> <%= will_paginate @posts %></div>
-      </div>
-    </section>
-
-    <section class="section">
-
-
-      <h5 class="title"><a href="#panel4">Строительное законодательство</a></h5>
-      <div class="content" data-slug="panel4">
-
-
-        <div class="paginate"> <%= will_paginate @posts %></div>
-
-        <% @houses.each do |post| %>
-
-            <div class="info_bloc" > <!-- info blok-->
-              <div class="post_title"><%= post.title %></div>
-              <div class="info_img"><%= image_tag post.image_url(:small) if post.image? %></div>
-              <div class="info_description">
-                <div><%= post.updated_at %>/<%= post.category%> </div>
-                <div> <%= truncate(post.description, :length => 135) %> </div>
-              </div>
-              <div class="info_link">
-                <%= link_to 'Show', post %>
-                <%= link_to 'Edit', edit_post_path(post) %>
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-            </div><!--End info blok-->
-        <% end %>
-        <div><%= link_to 'New Post', new_post_path %></div>
-        <div class="paginate"> <%= will_paginate @posts %></div>
-      </div>
-    </section>
+    <dd class="active"><%= link_to "Все", posts_path(:rend => "all") %></dd>
+    <dd><%= link_to "Инфраструктура Киева", posts_path(:rend => "infrost_kiev")%></dd>
+    <dd><%= link_to "Недвижимость Киева", posts_path(:rend => "kiev_estate")%></dd>
+    <dd><%= link_to "Строительное законодательство", posts_path(:rend => "low")%></dd>
+  </dl>
 
 
 
 
 
-    <section class="section">
-    <h5 class="title"><a href="#panel5">Specific Person</a></h5>
-      <div class="content" data-slug="panel5">
-        <ul class="large-block-grid-5">
-          <li><a href="mailto:mal@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Mal Reynolds</a></li>
-          <li><a href="mailto:zoe@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Zoe Washburne</a></li>
-          <li><a href="mailto:jayne@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Jayne Cobb</a></li>
-          <li><a href="mailto:doc@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Simon Tam</a></li>
-          <li><a href="mailto:killyouwithmymind@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">River Tam</a></li>
-          <li><a href="mailto:leafonthewind@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Hoban Washburne</a></li>
-          <li><a href="mailto:book@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Shepherd Book</a></li>
-          <li><a href="mailto:klee@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Kaywinnet Lee Fry</a></li>
-          <li><a href="mailto:inara@guild.comp.all"><img src="http://placehold.it/200x200&amp;text=[person]">Inarra Serra</a></li>
-        </ul>
-      </div>
-    </section>
-    <div class="paginate"> <%= will_paginate @posts %></div>
-  </div>
+
+  <%= render @rend%>
 </div>
 
 <!-- End Contact Details -->

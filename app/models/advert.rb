@@ -7,7 +7,7 @@ class Advert < ActiveRecord::Base
   accepts_nested_attributes_for :layouts, allow_destroy: true
   belongs_to :city
   belongs_to :city_district
-  belongs_to :streets
+  belongs_to :street
   belongs_to :house_type
   belongs_to :function_type
   belongs_to :user

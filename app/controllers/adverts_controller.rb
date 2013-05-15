@@ -57,7 +57,7 @@ class AdvertsController < ApplicationController
   # POST /adverts.json
   def create
     @advert = Advert.new(params[:advert])
-
+    @advert.user_id = current_user.id
     respond_to do |format|
       if @advert.save
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
@@ -73,7 +73,7 @@ class AdvertsController < ApplicationController
   # PUT /adverts/1.json
   def update
     @advert = Advert.find(params[:id])
-
+    @advert.user_id = current_user.id
     respond_to do |format|
       if @advert.update_attributes(params[:advert])
         format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
