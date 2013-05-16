@@ -2,266 +2,57 @@
 <div class="large-9 columns">
 
 
+  <dl class="sub-nav">
 
-  <div class="section-container tabs" data-section>
-    <section class="section">
-      <h5 class="title"><a href="#panel1">All</a></h5>
-      <div class="content" data-slug="panel1">
-<h1>Listing companies</h1>
+    <dd class="active"><%= link_to "Все", companies_path(:rend => "all") %></dd>
+    <dd><%= link_to "Строительные компании", companies_path(:rend => "Builder company")%></dd>
+    <dd><%= link_to "Риэлторские компании", companies_path(:rend => "Realtor company")%></dd>
+    <dd><%= link_to "Банки и Кредиты", companies_path(:rend => "Banks & Credit")%></dd>
+    <dd><%= link_to "Строительные магазины", companies_path(:rend => "Build Shop")%></dd>
+  </dl>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Mail</th>
-    <th>Site</th>
-    <th>Image</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <h5 class="title"><a href="#panel1">All</a></h5>
+  <div class="content" data-slug="panel1">
+    <h1>Listing companies</h1>
 
-<% @companies.each do |company| %>
-  <tr>
-    <td><%= company.title %></td>
-    <td><%= company.address %></td>
-    <td><%= company.phone %></td>
-    <td><%= company.mail %></td>
-    <td><%= company.site %></td>
-    <td><%= image_tag company.image_url(:company) if company.image? %> </td>
-    <td><%= company.description %></td>
-    <td><%= company.category %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Mail</th>
+        <th>Site</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<br />
-        <%= will_paginate @posts %>
-<%= link_to 'New Company', new_company_path %>
-
-
-      </div>
-    </section>
-
-
-
-
-
-    <section class="section">
-      <h5 class="title"><a href="#panel1">Строительные компании</a></h5>
-      <div class="content" data-slug="panel1">
-        <h1>Listing companies</h1>
-
-        <table>
+      <% @companies.each do |company| %>
           <tr>
-            <th>Title</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Mail</th>
-            <th>Site</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <td><%= company.title %></td>
+            <td><%= company.address %></td>
+            <td><%= company.phone %></td>
+            <td><%= company.mail %></td>
+            <td><%= company.site %></td>
+            <td><%= image_tag company.image_url(:company) if company.image? %> </td>
+            <td><%= company.description %></td>
+            <td><%= company.category %></td>
+            <td><%= link_to 'Show', company %></td>
+            <td><%= link_to 'Edit', edit_company_path(company) %></td>
+            <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
+      <% end %>
+    </table>
 
-          <% @builder.each do |company| %>
-              <tr>
-                <td><%= company.title %></td>
-                <td><%= company.address %></td>
-                <td><%= company.phone %></td>
-                <td><%= company.mail %></td>
-                <td><%= company.site %></td>
-                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
-                <td><%= company.description %></td>
-                <td><%= company.category %></td>
-                <td><%= link_to 'Show', company %></td>
-                <td><%= link_to 'Edit', edit_company_path(company) %></td>
-                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-          <% end %>
-        </table>
-
-        <br />
-        <%= will_paginate @posts %>
-        <%= link_to 'New Company', new_company_path %>
+    <br />
+    <%= will_paginate @posts %>
+    <%= link_to 'New Company', new_company_path %>
 
 
-      </div>
-    </section>
-
-
-
-
-
-
-
-    <section class="section">
-      <h5 class="title"><a href="#panel1">Риэлторские компании</a></h5>
-      <div class="content" data-slug="panel1">
-        <h1>Listing companies</h1>
-
-        <table>
-          <tr>
-            <th>Title</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Mail</th>
-            <th>Site</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-
-          <% @realtor.each do |company| %>
-              <tr>
-                <td><%= company.title %></td>
-                <td><%= company.address %></td>
-                <td><%= company.phone %></td>
-                <td><%= company.mail %></td>
-                <td><%= company.site %></td>
-                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
-                <td><%= company.description %></td>
-                <td><%= company.category %></td>
-                <td><%= link_to 'Show', company %></td>
-                <td><%= link_to 'Edit', edit_company_path(company) %></td>
-                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-          <% end %>
-        </table>
-
-        <br />
-        <%= will_paginate @posts %>
-        <%= link_to 'New Company', new_company_path %>
-
-
-      </div>
-    </section>
-
-
-
-
-    <section class="section">
-      <h5 class="title"><a href="#panel1">Банки и Кредиты</a></h5>
-      <div class="content" data-slug="panel1">
-        <h1>Listing companies</h1>
-
-        <table>
-          <tr>
-            <th>Title</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Mail</th>
-            <th>Site</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-
-          <% @banks.each do |company| %>
-              <tr>
-                <td><%= company.title %></td>
-                <td><%= company.address %></td>
-                <td><%= company.phone %></td>
-                <td><%= company.mail %></td>
-                <td><%= company.site %></td>
-                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
-                <td><%= company.description %></td>
-                <td><%= company.category %></td>
-                <td><%= link_to 'Show', company %></td>
-                <td><%= link_to 'Edit', edit_company_path(company) %></td>
-                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-          <% end %>
-        </table>
-
-        <br />
-        <%= will_paginate @posts %>
-        <%= link_to 'New Company', new_company_path %>
-
-
-      </div>
-    </section>
-
-
-
-
-
-    <section class="section">
-      <h5 class="title"><a href="#panel1">Строительные магазины</a></h5>
-      <div class="content" data-slug="panel1">
-        <h1>Listing companies</h1>
-
-        <table>
-          <tr>
-            <th>Title</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Mail</th>
-            <th>Site</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-
-          <% @shops.each do |company| %>
-              <tr>
-                <td><%= company.title %></td>
-                <td><%= company.address %></td>
-                <td><%= company.phone %></td>
-                <td><%= company.mail %></td>
-                <td><%= company.site %></td>
-                <td><%= image_tag company.image_url(:company) if company.image? %> </td>
-                <td><%= company.description %></td>
-                <td><%= company.category %></td>
-                <td><%= link_to 'Show', company %></td>
-                <td><%= link_to 'Edit', edit_company_path(company) %></td>
-                <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-          <% end %>
-        </table>
-
-        <br />
-        <%= will_paginate @posts %>
-        <%= link_to 'New Company', new_company_path %>
-
-
-      </div>
-    </section>
-
-
-
-    <section class="section">
-      <h5 class="title"><a href="#panel2">Specific Person</a></h5>
-      <div class="content" data-slug="panel2">
-        <ul class="large-block-grid-5">
-
-
-          <li><a href="mailto:mal@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Mal Reynolds</a></li>
-          <li><a href="mailto:zoe@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Zoe Washburne</a></li>
-          <li><a href="mailto:jayne@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Jayne Cobb</a></li>
-          <li><a href="mailto:doc@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Simon Tam</a></li>
-          <li><a href="mailto:killyouwithmymind@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">River Tam</a></li>
-          <li><a href="mailto:leafonthewind@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Hoban Washburne</a></li>
-          <li><a href="mailto:book@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Shepherd Book</a></li>
-          <li><a href="mailto:klee@serenity.bc.reb"><img src="http://placehold.it/200x200&amp;text=[person]">Kaywinnet Lee Fry</a></li>
-          <li><a href="mailto:inara@guild.comp.all"><img src="http://placehold.it/200x200&amp;text=[person]">Inarra Serra</a></li>
-        </ul>
-      </div>
-    </section>
   </div>
+
 </div>
 
 <!-- End Contact Details -->

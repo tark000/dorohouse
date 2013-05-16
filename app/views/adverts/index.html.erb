@@ -67,18 +67,53 @@
   <p>We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
 
   <dl class="sub-nav">
+    <dd class="active"><a href=<%= adverts_path(:rend => "all") %>>all</a></dd>
+    <dd><a href=<%= adverts_path(:rend => "Commercial") %>>Комерческая недвижимость</a></dd>
+    <dd><a href=<%= adverts_path(:rend => "Apartment") %>>Квартиры</a></dd>
+    <dd><a href=<%= adverts_path(:rend => "House") %>>Дома</a></dd>
+    <dd><a href=<%= adverts_path(:rend => "Land") %>>Земля</a></dd>
 
-    <dd class="active"><%= link_to "All", adverts_path(:rend => "all") %></dd>
-    <dd><%= link_to "Комерческая недвижимость", adverts_path(:rend => "commercial")%></dd>
-    <dd><%= link_to "Квартиры", adverts_path(:rend => "apartment")%></dd>
-    <dd><%= link_to "Дома", adverts_path(:rend => "home")%></dd>
-    <dd><%= link_to "Земля", adverts_path(:rend => "land")%></dd>
 
   </dl>
 
 
+  <%= form_tag adverts_path, :method => 'get' do %>
 
-  <%= render @rend %>
+      <%= hidden_field_tag :direction, params[:direction] %>
+      <%= hidden_field_tag :sort, params[:sort] %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :title => nil %>
+      </p>
+      <%= will_paginate @adverts %>
+
+      <h1>Advanced Search</h1>
+
+      <th> <%=  sortable  "Title" %></th>
+      <th> <%=  sortable  "Price" %></th>
+      <th> <%=  sortable  "created_at" %></th>
+
+
+      <% @adverts.each do |advert| %>
+          <tr>
+            <p><%= advert.id %></p>
+            <p><%= advert.title %></p>
+
+            <p><%= advert.price %></p>
+            <td><%= advert.created_at.strftime("%B %e, %Y") %></td>
+
+            <td><%= link_to 'Show', advert %></td>
+            <td><%= link_to 'Edit', edit_advert_path(advert) %></td>
+            <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+      <%= will_paginate @adverts %>
+
+  <% end %>
+
+
+
+  <%= link_to 'New Advert', new_advert_path %>
 
 
 

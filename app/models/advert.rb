@@ -22,6 +22,6 @@ class Advert < ActiveRecord::Base
       scoped
     end
   end
-
+                        Advert
 
 end

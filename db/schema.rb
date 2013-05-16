@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514081004) do
+ActiveRecord::Schema.define(:version => 20130515104740) do
 
   create_table "advert_images", :force => true do |t|
     t.string   "image"
@@ -111,6 +111,21 @@ ActiveRecord::Schema.define(:version => 20130514081004) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "searches", :force => true do |t|
+    t.string   "title"
+    t.string   "category"
+    t.integer  "city_id"
+    t.decimal  "min_price",   :precision => 10, :scale => 0
+    t.decimal  "max_price",   :precision => 10, :scale => 0
+    t.decimal  "min_area",    :precision => 10, :scale => 0
+    t.decimal  "max_area",    :precision => 10, :scale => 0
+    t.integer  "state_id"
+    t.integer  "room_number"
+    t.float    "floor"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   create_table "states", :force => true do |t|

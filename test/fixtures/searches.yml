@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  category: MyString
+  city_id: 1
+  min_price: 9.99
+  max_price: 9.99
+  min_area: 9.99
+  max_area: 9.99
+  state_id: 1
+  room_numbr: 1
+  floor: 1.5
+
+two:
+  title: MyString
+  category: MyString
+  city_id: 1
+  min_price: 9.99
+  max_price: 9.99
+  min_area: 9.99
+  max_area: 9.99
+  state_id: 1
+  room_numbr: 1
+  floor: 1.5

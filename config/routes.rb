@@ -14,6 +14,8 @@ Dorohouse::Application.routes.draw do
 
   resources :posts
 
+  resources :searches
+
 
 
   resources :companies
@@ -23,8 +25,7 @@ Dorohouse::Application.routes.draw do
 
   resources :adverts
 
-  resources :living_rooms, :controller => 'adverts'
-  resources :not_living_rooms, :controller => 'adverts'
+
 
 
 

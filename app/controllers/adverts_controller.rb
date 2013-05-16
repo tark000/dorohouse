@@ -5,13 +5,13 @@ class AdvertsController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
     @adverts = Advert.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
-    @l_rooms = Advert.advert_category("LivingRoom").search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
-    @n_l_rooms = Advert.advert_category("NotLivingRoom").search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
-    if params[:rend] == nil
-      @rend = "all"
+    if params[:rend] == "all" || params[:rend] == nil
+      @adverts = Advert.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
     else
-      @rend = params[:rend]
+      @adverts = Advert.where(:category => params[:rend]).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
     end
+
+
 
     respond_to do |format|
       format.html # index.html.erb
