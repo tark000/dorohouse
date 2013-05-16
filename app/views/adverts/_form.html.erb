@@ -20,45 +20,43 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :type_id %><br />
-    <%= f.select :type_id, @type%>
+    <%= f.label :function_type_id %><br />
+    <%= f.collection_select :function_type_id, FunctionType.order(:title), :id, :title, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :region_id %><br />
-    <%= f.text_field :region_id %>
-    <%= f.select :region_id, @region %>
+    <%= f.collection_select :region_id, Region.order(:title), :id, :title, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
-    <%= f.select :city_id, @city %>
+    <%= f.collection_select :city_id, City.order(:title), :id, :title, include_blank: true %>
   </div>
+    <div class="field">
+      <%= f.label :street_id %><br />
+      <%= f.grouped_collection_select :street_id, City.order(:title), :streets, :title, :id, :title, include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label :city_district_id %><br />
+      <%= f.grouped_collection_select :city_district_id, City.order(:title), :city_districts, :title, :id, :title, include_blank: true %>
+    </div>
   <div class="field">
     <%= f.label :area %><br />
     <%= f.text_field :area %>
   </div>
-  <div class="field">
-    <%= f.label :street_id %><br />
-    <%= f.text_field :street_id %>
-    <%= f.select :street_id, @street %>
-  </div>
+
   <div class="field">
     <%= f.label :house %><br />
     <%= f.text_field :house %>
   </div>
-  <div class="field">
-    <%= f.label :city_district_id %><br />
-    <%= f.text_field :city_district_id %>
 
-  </div>
   <div class="field">
     <%= f.label :room_number %><br />
     <%= f.number_field :room_number %>
   </div>
   <div class="field">
     <%= f.label :house_type_id %><br />
-    <%= f.text_field :house_type_id %>
-    <%= f.select :house_type_id, @house_type %>
+
+    <%= f.collection_select :house_type_id, HouseType.order(:title), :id, :title, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :floor %><br />
@@ -70,8 +68,7 @@
   </div>
   <div class="field">
     <%= f.label :state_id %><br />
-    <%= f.text_field :state_id %>
-    <%= f.select :state_id, @state %>
+    <%= f.collection_select :state_id, State.order(:title), :id, :title, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -79,7 +76,7 @@
   </div>
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :layout %><br />
@@ -89,11 +86,27 @@
     <%= f.label :video %><br />
     <%= f.text_field :video %>
   </div>
+
+    <div class="field">
+      <%= f.label :category %><br />
+      <%= f.select :category, ["Commercial","Apartment","House","Land"] %>
+
+    </div>
+
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-    <%= f.select :user_id, @user %>
+    <%= f.fields_for :advert_images do |builder| %>
+        <%= render 'advert_image_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add AdvertImage", f, :advert_images %>
   </div>
+
+  <div class="field">
+    <%= f.fields_for :layouts do |builder| %>
+        <%= render 'layout_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Add Layout", f, :layouts %>
+  </div>
+           =----------------
   <div class="actions">
     <%= f.submit %>
   </div>

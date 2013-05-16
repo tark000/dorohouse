@@ -1,8 +1,17 @@
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
+
+  helper_method :sort_column, :sort_direction
   def index
-    @adverts = Advert.all
+    @adverts = Advert.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
+    if params[:rend] == "all" || params[:rend] == nil
+      @adverts = Advert.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
+    else
+      @adverts = Advert.where(:category => params[:rend]).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3, :page => params[:page])
+    end
+
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,52 +35,11 @@ class AdvertsController < ApplicationController
   def new
     @advert = Advert.new
 
-
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @advert }
     end
 
-    @city = []
-    City.all.each do |n|
-      @city << n.title
-    end
-
-    @city_district = []
-    CityDistrict.all.each do |n|
-      @city_district << n.title
-    end
-
-    @house_type = []
-    City.all.each do |n|
-      @house_type << n.title
-    end
-
-    @region = []
-    Region.all.each do |n|
-      @region << n.title
-    end
-
-    @state = []
-    State.all.each do |n|
-      @state << n.title
-    end
-
-    @street = []
-    Street.all.each do |n|
-      @street << n.title
-    end
-
-    @type = []
-    Type.all.each do |n|
-      @type << n.title
-    end
-
-    @user = []
-    User.all.each do |n|
-      @user << n.name
-    end
 
   end
 
@@ -82,45 +50,6 @@ class AdvertsController < ApplicationController
     @advert = Advert.find(params[:id])
 
 
-    @city = []
-    City.all.each do |n|
-      @city << n.title
-    end
-
-    @city_district = []
-    CityDistrict.all.each do |n|
-      @city_district << n.title
-    end
-
-    @house_type = []
-    City.all.each do |n|
-      @house_type << n.title
-    end
-
-    @region = []
-    Region.all.each do |n|
-      @region << n.title
-    end
-
-    @state = []
-    State.all.each do |n|
-      @state << n.title
-    end
-
-    @street = []
-    Street.all.each do |n|
-      @street << n.title
-    end
-
-    @type = []
-    Type.all.each do |n|
-      @type << n.title
-    end
-
-    @user = []
-    User.all.each do |n|
-      @user << n.name
-    end
 
   end
 
@@ -128,7 +57,7 @@ class AdvertsController < ApplicationController
   # POST /adverts.json
   def create
     @advert = Advert.new(params[:advert])
-
+    @advert.user_id = current_user.id
     respond_to do |format|
       if @advert.save
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
@@ -144,7 +73,7 @@ class AdvertsController < ApplicationController
   # PUT /adverts/1.json
   def update
     @advert = Advert.find(params[:id])
-
+    @advert.user_id = current_user.id
     respond_to do |format|
       if @advert.update_attributes(params[:advert])
         format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
@@ -166,5 +95,16 @@ class AdvertsController < ApplicationController
       format.html { redirect_to adverts_url }
       format.json { head :no_content }
     end
+  end
+
+
+  private
+
+  def sort_column
+     params[:sort] || "title"
+  end
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 end

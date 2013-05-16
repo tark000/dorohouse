@@ -11,12 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424131240) do
+ActiveRecord::Schema.define(:version => 20130515104740) do
+
+  create_table "advert_images", :force => true do |t|
+    t.string   "image"
+    t.string   "advert_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "adverts", :force => true do |t|
     t.string   "title"
     t.float    "price"
-    t.string   "type_id"
+    t.string   "function_type_id"
     t.string   "region_id"
     t.string   "city_id"
     t.float    "area"
@@ -35,12 +42,7 @@ ActiveRecord::Schema.define(:version => 20130424131240) do
     t.string   "user_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-  end
-
-  create_table "categories", :force => true do |t|
-    t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "category"
   end
 
   create_table "cities", :force => true do |t|
@@ -66,17 +68,17 @@ ActiveRecord::Schema.define(:version => 20130424131240) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "category"
   end
 
-  create_table "house_types", :force => true do |t|
+  create_table "function_types", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "images", :force => true do |t|
+  create_table "house_types", :force => true do |t|
     t.string   "title"
-    t.string   "advert_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -88,6 +90,13 @@ ActiveRecord::Schema.define(:version => 20130424131240) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "post_images", :force => true do |t|
+    t.string   "image"
+    t.string   "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -95,12 +104,28 @@ ActiveRecord::Schema.define(:version => 20130424131240) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "category_id"
+    t.string   "category"
   end
 
   create_table "regions", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "searches", :force => true do |t|
+    t.string   "title"
+    t.string   "category"
+    t.integer  "city_id"
+    t.decimal  "min_price",   :precision => 10, :scale => 0
+    t.decimal  "max_price",   :precision => 10, :scale => 0
+    t.decimal  "min_area",    :precision => 10, :scale => 0
+    t.decimal  "max_area",    :precision => 10, :scale => 0
+    t.integer  "state_id"
+    t.integer  "room_number"
+    t.float    "floor"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   create_table "states", :force => true do |t|
@@ -112,12 +137,6 @@ ActiveRecord::Schema.define(:version => 20130424131240) do
   create_table "streets", :force => true do |t|
     t.string   "title"
     t.string   "city_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "types", :force => true do |t|
-    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

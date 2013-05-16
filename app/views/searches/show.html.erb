@@ -1,0 +1,40 @@
+<h1>Search Results</h1>
+
+
+
+
+
+
+
+
+<%= form_tag adverts_path, :method => 'get' do %>
+
+
+
+
+    <h1>Advanced Search</h1>
+
+
+
+    <% @adverts.each do |advert| %>
+        <tr>
+          <p>id <%= advert.id %></p>
+          <p><%= advert.title %></p>
+          <p><%= advert.city_id %></p>
+
+          <p><%= advert.price %></p>
+          <td><%= advert.created_at.strftime("%B %e, %Y") %></td>
+
+          <td><%= link_to 'Show', advert %></td>
+          <td><%= link_to 'Edit', edit_advert_path(advert) %></td>
+          <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <br>-----------------------------------------------------
+    <% end %>
+
+
+<% end %>
+
+
+
+<%= link_to 'New Advert', new_advert_path %>

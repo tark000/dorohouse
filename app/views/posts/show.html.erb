@@ -16,11 +16,19 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @post.category_id %>
+  <b>Type:</b>
+  <%= @post.category %>
 </p>
 
 
+<ol class="questions">
+  <% @post.post_images.each do |image| %>
+      <li>
+
+        <%= image_tag image.image_url(:big) if image.image? %>
+      </li>
+  <% end %>
+</ol>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

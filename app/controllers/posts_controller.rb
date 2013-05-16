@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(:per_page => 3, :page => params[:page])
+    if params[:rend] == "all" || params[:rend] == nil
+      @posts = Post.paginate(:per_page => 3, :page => params[:page])
+    else
+      @posts = Post.where(:category => params[:rend]).paginate(:per_page => 3, :page => params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

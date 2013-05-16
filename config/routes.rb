@@ -12,15 +12,21 @@ Dorohouse::Application.routes.draw do
   resources :sessions
 
 
-
-
   resources :posts
+
+  resources :searches
+
 
 
   resources :companies
-
+  resources :users do
+    resources :adverts
+  end
 
   resources :adverts
+
+
+
 
 
   # The priority is based upon order of creation:

@@ -2,7 +2,12 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.paginate(:per_page => 3, :page => params[:page])
+
+    if params[:rend] == "all" || params[:rend] == nil
+      @companies = Company.paginate(:per_page => 3, :page => params[:page])
+    else
+      @companies = Company.where(:category => params[:rend]).paginate(:per_page => 3, :page => params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb
