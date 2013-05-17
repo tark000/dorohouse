@@ -27,14 +27,14 @@
 <% end %>
 <%= render 'layouts/top_bar' %>
 
-<p><%= link_to "Advanced Search", new_search_path %></p>
+
 
 <!-- Main Page Content and Sidebar -->
 
 <div class="row">
-
-  <%= yield %>
-
+  <div class="large-9 columns">
+    <%= yield %>
+  </div>
   <%= render 'layouts/sidebar' %>
 </div>
 

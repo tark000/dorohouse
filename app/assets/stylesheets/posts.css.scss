@@ -1,9 +1,9 @@
 .info_bloc {
-float: left; border-bottom: 1px solid #cccccc; width: 100%; margin: 10px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
-.post_title {
-  width: 100%; margin: 3px 10px 3px 20px; color: #4bab1f; font-size: 16px; font-family: Arial;
+.title {
+   margin: 3px 10px 10px 10px; color: #4bab1f; font-size: 16px; font-family: Arial;
 }
 
 .info_img {
@@ -20,4 +20,8 @@ float: left; border-bottom: 1px solid #cccccc; width: 100%; margin: 10px 0 0 0;
 
 .paginate {
   text-align: center;
+}
+
+.line {
+  border-bottom: 1px solid #cccccc; margin: 10px 10px 10px 10px;
 }

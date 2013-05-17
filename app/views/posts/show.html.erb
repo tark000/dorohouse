@@ -1,38 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="small-5 columns">
+      <a class="th radius" >
+        <%= image_tag @post.image_url(:big) if @post.image? %>
+      </a>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+    </div>
+    <div class="small-7 columns">
+      <div class="row">
+        <div class="large-12 columns title"><%= @post.title %></div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns"><%= @post.updated_at.strftime("%y-%m-%d") %> / <%= link_to @post.category, posts_path(:rend => @post.category)%></div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <ul class="small-block-grid-2">
+            <% @post.post_images.each do |image| %>
+                <li>
+                  <%= image_tag image.image_url(:big) if image.image? %>
+                </li>
+            <% end %>
+          </ul>
 
-<p>
-  <b>Description:</b>
-  <%= @post.description %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= image_tag @post.image_url(:big) if @post.image? %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @post.category %>
-</p>
-
-
-<ol class="questions">
-  <% @post.post_images.each do |image| %>
-      <li>
-
-        <%= image_tag image.image_url(:big) if image.image? %>
-      </li>
-  <% end %>
-</ol>
+        </div>
+      </div>
+    </div>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
 
+    <div class="small-12 columns">
+
+      <%= @post.description %>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<%= link_to 'Edit', edit_post_path(@post) if current_user %>
 
 
