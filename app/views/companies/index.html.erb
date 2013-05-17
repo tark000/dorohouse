@@ -1,52 +1,47 @@
 
-  <dl class="sub-nav">
+<%=  render "sub_nav" %>
 
-    <dd class="active"><%= link_to "Все", companies_path(:rend => "all") %></dd>
-    <dd><%= link_to "Строительные компании", companies_path(:rend => "Builder company")%></dd>
-    <dd><%= link_to "Риэлторские компании", companies_path(:rend => "Realtor company")%></dd>
-    <dd><%= link_to "Банки и Кредиты", companies_path(:rend => "Banks & Credit")%></dd>
-    <dd><%= link_to "Строительные магазины", companies_path(:rend => "Build Shop")%></dd>
-  </dl>
-
-  <h5 class="title"><a href="#panel1">All</a></h5>
-  <div class="content" data-slug="panel1">
-    <h1>Listing companies</h1>
-
-    <table>
-      <tr>
-        <th>Title</th>
-        <th>Address</th>
-        <th>Phone</th>
-        <th>Mail</th>
-        <th>Site</th>
-        <th>Image</th>
-        <th>Description</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
+  <%= will_paginate @posts %>
       <% @companies.each do |company| %>
-          <tr>
-            <td><%= company.title %></td>
-            <td><%= company.address %></td>
-            <td><%= company.phone %></td>
-            <td><%= company.mail %></td>
-            <td><%= company.site %></td>
-            <td><%= image_tag company.image_url(:company) if company.image? %> </td>
-            <td><%= company.description %></td>
-            <td><%= company.category %></td>
-            <td><%= link_to 'Show', company %></td>
-            <td><%= link_to 'Edit', edit_company_path(company) %></td>
-            <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-      <% end %>
-    </table>
+          <div class="row">
+            <div class="large-12 columns info_bloc">
+              <div class="row">
+                <div class="small-3 columns">
+                  <a class="th radius">
+                    <%= image_tag company.image_url(:company) if company.image? %>
+                  </a>
 
-    <br />
+                </div>
+                <div class="small-9 columns">
+                  <div class="row">
+                    <div class="large-12 columns"><%= link_to company.title, company %></div>
+
+                    <div class="large-12 columns">Адрес: <%= company.address %></div>
+
+                    <div class="large-12 columns">Телефон: <td><%= company.phone %></td></div>
+
+                    <div class="large-12 columns">
+                      <%= link_to 'Подробнее »', company %>
+                      <%= link_to 'Изменить', edit_company_path(company) if current_user%>
+                      <%= link_to 'Удалить', company, method: :delete, data: { confirm: 'Are you sure?' } if current_user%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="large-12 columns title line"></div>
+
+  <% end %>
+
+
+
+
+
+
     <%= will_paginate @posts %>
-    <%= link_to 'New Company', new_company_path %>
+    <%= link_to 'New Company', new_company_path if current_user%>
 
 
-  </div>
+
 

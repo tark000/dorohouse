@@ -20,6 +20,17 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
 
+    if @company==Company.first
+      @next=Company.where("id > ?", @company.id).first
+      @previous=Company.where("id > ?", @company.id).last
+    elsif @post==Company.last
+      @next=Company.where("id < ?", @company.id).first
+      @previous=Company.where("id < ?", @company.id).last
+    else
+      @next = Company.where("id > ?", @company.id).first
+      @previous=Company.where("id < ?", @company.id).last
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @company }

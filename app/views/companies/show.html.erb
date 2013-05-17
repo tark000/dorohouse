@@ -1,45 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%=  render "sub_nav" %>
 
-<p>
-  <b>Title:</b>
-  <%= @company.title %>
-</p>
+<a href=<%= company_path(@previous) %>  class="prev_post"><span>Предыдущая</span></a>
+<a href=<%= company_path(@next) %>  class="next_post"><span>Следующая</span></a>
 
-<p>
-  <b>Address:</b>
-  <%= @company.address %>
-</p>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="small-5 columns">
+      <a class="th radius" >
+        <%= image_tag @company.image_url(:big) if @company.image? %>
+      </a>
 
-<p>
-  <b>Phone:</b>
-  <%= @company.phone %>
-</p>
+    </div>
+    <div class="small-7 columns">
 
-<p>
-  <b>Mail:</b>
-  <%= @company.mail %>
-</p>
+      <div class="large-12 columns title"><%= @company.title %></div>
+      <div class="large-12 columns">Адрес: <%= @company.address %></div>
+      <div class="large-12 columns">Телефон: <%= @company.phone %></div>
+      <div class="large-12 columns">E-mail: <%= @company.mail %></div>
+      <div class="large-12 columns">Сайт: <%= link_to @company.site, @company.site %></div>
 
-<p>
-  <b>Site:</b>
-  <%= @company.site %>
-</p>
+    </div>
 
-<p>
-  <b>Image:</b>
-  <%= image_tag @company.image_url(:thumb) if @company.image? %>
-</p>
+    <div class="small-12 columns" style="margin: 20px 0 20px 0;">
 
-<p>
-  <b>Description:</b>
-  <%= @company.description %>
-</p>
+      <%= @company.description %>
 
-<p>
-  <b>Site:</b>
-  <%= @company.category %>
-</p>
+    </div>
+  </div>
+</div>
 
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<%= link_to 'Edit', edit_company_path(@company) if current_user%>
+
