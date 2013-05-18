@@ -27,7 +27,7 @@ group :assets do
   gem 'zurb-foundation', '~> 4.0.0'
 end
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg'
 end
 gem 'jquery-rails'
 

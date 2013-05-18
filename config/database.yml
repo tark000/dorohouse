@@ -27,12 +27,11 @@ test:
   socket: /var/run/mysqld/mysqld.sock
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: dorohouse_db
-  pool: 5
+  pool: 5432
   host: localhost
-  username: root
-  password: "123"
-  socket: /var/run/mysqld/mysqld.sock
+  username: bylhigexopwtos
+  password: pnOH4zEoLHsfv-gdJAVH8b5oE7
