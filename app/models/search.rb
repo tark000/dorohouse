@@ -14,8 +14,8 @@ class Search < ActiveRecord::Base
     adverts = adverts.where(:state_id=> state_id) if state_id.present?
     adverts = adverts.where("price >= ?", min_price) if min_price.present?
     adverts = adverts.where("price <= ?", max_price) if max_price.present?
-    adverts = adverts.where("area >= ?", min_area) if min_price.present?
-    adverts = adverts.where("area <= ?", max_area) if max_price.present?
+    adverts = adverts.where("area >= ?", min_area) if min_area.present?
+    adverts = adverts.where("area <= ?", max_area) if max_area.present?
     adverts
   end
 end

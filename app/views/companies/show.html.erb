@@ -6,9 +6,8 @@
 <div class="row">
   <div class="small-12 columns">
     <div class="small-5 columns">
-      <a class="th radius" >
-        <%= image_tag @company.image_url(:big) if @company.image? %>
-      </a>
+
+        <%= image_tag @company.image_url(:big), :class=>"th radius" if @company.image? %>
 
     </div>
     <div class="small-7 columns">

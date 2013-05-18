@@ -16,9 +16,8 @@
 
 
               <div class="small-3 columns">
-                <a class="th radius">
-                  <%= image_tag post.image_url(:small) if post.image? %>
-                </a>
+
+                  <%= image_tag post.image_url(:small), :class=>"th radius" if post.image? %>
 
               </div>
               <div class="small-9 columns">

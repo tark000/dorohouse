@@ -23,13 +23,15 @@ class CompaniesController < ApplicationController
     if @company==Company.first
       @next=Company.where("id > ?", @company.id).first
       @previous=Company.where("id > ?", @company.id).last
-    elsif @post==Company.last
+    elsif @company==Company.last
       @next=Company.where("id < ?", @company.id).first
       @previous=Company.where("id < ?", @company.id).last
     else
       @next = Company.where("id > ?", @company.id).first
       @previous=Company.where("id < ?", @company.id).last
     end
+
+
 
     respond_to do |format|
       format.html # show.html.erb

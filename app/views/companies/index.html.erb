@@ -1,4 +1,9 @@
-
+<nav class="breadcrumbs">
+  <a href="#">Home</a>
+  <a href="#">Features</a>
+  <a class="unavailable" href="#">Gene Splicing</a>
+  <a class="current" href="#">Cloning</a>
+</nav>
 <%=  render "sub_nav" %>
 
   <%= will_paginate @posts %>
@@ -7,9 +12,8 @@
             <div class="large-12 columns info_bloc">
               <div class="row">
                 <div class="small-3 columns">
-                  <a class="th radius">
-                    <%= image_tag company.image_url(:company) if company.image? %>
-                  </a>
+
+                    <%= image_tag company.image_url(:company), :class=>"th radius" if company.image? %>
 
                 </div>
                 <div class="small-9 columns">
