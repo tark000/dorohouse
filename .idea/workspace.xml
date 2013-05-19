@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6578b66-bb1e-4f0d-a414-279d0ffa49f1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/adverts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/adverts/show.html.erb" />
     </list>
     <ignored path="dorohouse.iws" />
@@ -97,7 +96,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/adverts/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="79" selection-start="2467" selection-end="2467" vertical-scroll-proportion="0.15572232">
+            <state line="73" column="73" selection-start="2530" selection-end="2530" vertical-scroll-proportion="0.5347092">
               <folding />
             </state>
           </provider>
@@ -768,7 +767,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/adverts/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="79" selection-start="2467" selection-end="2467" vertical-scroll-proportion="0.15572232">
+        <state line="73" column="73" selection-start="2530" selection-end="2530" vertical-scroll-proportion="0.5347092">
           <folding />
         </state>
       </provider>
