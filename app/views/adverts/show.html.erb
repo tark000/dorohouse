@@ -36,12 +36,12 @@
               <p>N/A</p>
               <p><%= @advert.price/@advert.area %></p>
               <p><%= @advert.area %></p>
-              <p><%= @advert.function_type.title %></p>
+              <p><%= @advert.function_type.title if @advert.function_type_id.present? %></p>
               <p>N/A</p>
               <p>N/A</p>
               <p><%= @advert.floor %></p>
               <p><%= @advert.height %></p>
-              <p><%= @advert.state.title %></p>
+              <p><%= @advert.state.title if @advert.state.title.present?%></p>
             </div>
 
 
@@ -64,8 +64,8 @@
 
 
       <ul class="clearing-thumbs small-block-grid-2" data-clearing>
-        <% @advert.advert_images.each do |image| %>
-            <li><%=link_to (image_tag image.image_url(:small)),image.image_url%>
+        <% @advert.advert_images.each do |image| if AdvertImage.last.present?%>
+            <li><%=link_to (image_tag image.image_url(:small)),image.image_url %>
         <% end %>
       </ul>
 
@@ -77,7 +77,7 @@
     <h5 class="title"> <%= link_to 'Планировка', "#panel2" %></h5>
     <div class="content" data-slug="panel2">
       <ul class="clearing-thumbs small-block-grid-2" data-clearing>
-        <% @advert.layouts.each do |image| %>
+        <% @advert.layouts.each do |image| if Layout.last.present?%>
             <li ><%=link_to (image_tag image.image_url(:small)),image.image_url%>
         <% end %>
       </ul>
