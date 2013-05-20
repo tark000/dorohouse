@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6578b66-bb1e-4f0d-a414-279d0ffa49f1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20130520142847_change_type_string_to_integer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb" afterPath="$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb" />
     </list>
     <ignored path="dorohouse.iws" />
@@ -24,7 +26,7 @@
       <file leaf-file-name="20130520144857_type_id.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="3" selection-start="1955" selection-end="1955" vertical-scroll-proportion="-0.625969">
+            <state line="94" column="17" selection-start="2751" selection-end="2764" vertical-scroll-proportion="2.8600407">
               <folding />
             </state>
           </provider>
@@ -32,6 +34,15 @@
       </file>
       <file leaf-file-name="20130515104740_create_searches.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20130515104740_create_searches.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20130520142847_change_type_string_to_integer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20130520142847_change_type_string_to_integer.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -61,15 +72,6 @@
         <entry file="file://$PROJECT_DIR$/db/migrate/20130422160301_create_adverts.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="8" selection-start="143" selection-end="149" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/companies/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="40" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -820,9 +822,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20130520142847_change_type_string_to_integer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="3" selection-start="1955" selection-end="1955" vertical-scroll-proportion="-0.625969">
+        <state line="94" column="17" selection-start="2751" selection-end="2764" vertical-scroll-proportion="2.8600407">
           <folding />
         </state>
       </provider>

@@ -100,7 +100,7 @@ class TypeId < ActiveRecord::Migration
     remove_column :advert_images, :advert_id_int
 
 
-    rename_column :layouts, :advert_id, :advert_id_integer
+
 
     rename_column :layouts, :advert_id, :advert_id_int
     add_column :layouts, :advert_id, :integer
