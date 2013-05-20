@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6578b66-bb1e-4f0d-a414-279d0ffa49f1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20130520142847_change_type_string_to_integer.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20130422160301_create_adverts.rb" afterPath="$PROJECT_DIR$/db/migrate/20130422160301_create_adverts.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb" afterPath="$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb" />
     </list>
     <ignored path="dorohouse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,7 +24,7 @@
       <file leaf-file-name="20130520144857_type_id.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="44" selection-start="351" selection-end="351" vertical-scroll-proportion="0.31976745">
+            <state line="67" column="3" selection-start="1955" selection-end="1955" vertical-scroll-proportion="-0.625969">
               <folding />
             </state>
           </provider>
@@ -825,7 +822,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130520144857_type_id.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="44" selection-start="351" selection-end="351" vertical-scroll-proportion="0.31976745">
+        <state line="67" column="3" selection-start="1955" selection-end="1955" vertical-scroll-proportion="-0.625969">
           <folding />
         </state>
       </provider>

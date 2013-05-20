@@ -65,7 +65,7 @@ class TypeId < ActiveRecord::Migration
     remove_column :adverts, :user_id_int
 
 
-    rename_column :adverts, :street_id, :street_id_integer
+
 
     rename_column :adverts, :street_id, :street_id_int
     add_column :adverts, :street_id, :integer
