@@ -18,7 +18,7 @@
 
         <div class="large-12 columns">
           <ul class="small-block-grid-2">
-            <% @post.post_images.each do |image| %>
+            <% @post.post_images.each if PostImage.where(:post_id => @post.id).present? do |image| %>
                 <li>
                   <%= image_tag image.image_url(:big) if image.image? %>
                 </li>
