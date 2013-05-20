@@ -65,7 +65,7 @@
 
       <ul class="clearing-thumbs small-block-grid-2" data-clearing>
         <% @advert.advert_images.each if AdvertImage.where(:advert_id => @advert.id).present? do |image| %>
-            <li><%=link_to (image_tag image.image_url(:small)),image.image_url%>
+            <li><%=link_to (image_tag image.image_url(:small)),image.image_url if image.image_url.present? %>
         <% end %>
       </ul>
 
