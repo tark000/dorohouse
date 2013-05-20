@@ -11,37 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520144857) do
+ActiveRecord::Schema.define(:version => 20130515104740) do
 
   create_table "advert_images", :force => true do |t|
     t.string   "image"
-    t.integer  "advert_id_integer"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "advert_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "adverts", :force => true do |t|
     t.string   "title"
     t.float    "price"
-    t.integer  "function_type_id_integer"
-    t.integer  "region_id_integer"
-    t.integer  "city_id_integer"
+    t.integer  "function_type_id"
+    t.integer  "region_id"
+    t.integer  "city_id"
     t.float    "area"
-    t.integer  "street_id_integer"
+    t.string   "street_id"
     t.string   "house"
-    t.integer  "city_district_id_integer"
+    t.integer  "city_district_id"
     t.integer  "room_number"
-    t.integer  "house_type_id_integer"
+    t.integer  "house_type_id"
     t.string   "floor"
     t.float    "height"
-    t.integer  "state_id_integer"
+    t.integer  "state_id"
     t.text     "description"
     t.string   "image"
     t.string   "layout"
     t.string   "video"
-    t.integer  "user_id_integer"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.integer  "user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "category"
   end
 
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(:version => 20130520144857) do
 
   create_table "city_districts", :force => true do |t|
     t.string   "title"
-    t.integer  "city_id_integer"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "city_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "companies", :force => true do |t|
@@ -85,16 +85,16 @@ ActiveRecord::Schema.define(:version => 20130520144857) do
 
   create_table "layouts", :force => true do |t|
     t.string   "image"
-    t.integer  "advert_id_integer"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "advert_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "post_images", :force => true do |t|
     t.string   "image"
-    t.integer  "post_id_integer"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -103,7 +103,6 @@ ActiveRecord::Schema.define(:version => 20130520144857) do
     t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "category_id"
     t.string   "category"
   end
 
@@ -136,9 +135,9 @@ ActiveRecord::Schema.define(:version => 20130520144857) do
 
   create_table "streets", :force => true do |t|
     t.string   "title"
-    t.integer  "city_id_integer"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "city_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
