@@ -94,12 +94,16 @@
     </div>
 
   <div class="field">
-
+    <%= f.fields_for :advert_images  do |builder| %>
+        <%= render 'advert_image_fields', f: builder %>
+    <% end %>
     <%= link_to_add_fields "Add AdvertImage", f, :advert_images %>
   </div>
 
   <div class="field">
-
+    <%= f.fields_for :layouts do |builder| %>
+        <%= render 'layout_fields', f: builder %>
+    <% end %>
     <%= link_to_add_fields "Add Layout", f, :layouts %>
   </div>
            =----------------
