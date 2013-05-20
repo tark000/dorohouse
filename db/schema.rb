@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515104740) do
+ActiveRecord::Schema.define(:version => 20130520142847) do
 
   create_table "advert_images", :force => true do |t|
     t.string   "image"
-    t.string   "advert_id"
+    t.integer  "advert_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -23,23 +23,23 @@ ActiveRecord::Schema.define(:version => 20130515104740) do
   create_table "adverts", :force => true do |t|
     t.string   "title"
     t.float    "price"
-    t.string   "function_type_id"
-    t.string   "region_id"
-    t.string   "city_id"
+    t.integer  "function_type_id"
+    t.integer  "region_id"
+    t.integer  "city_id"
     t.float    "area"
-    t.string   "street_id"
+    t.integer  "street_id"
     t.string   "house"
-    t.string   "city_district_id"
+    t.integer  "city_district_id"
     t.integer  "room_number"
-    t.string   "house_type_id"
+    t.integer  "house_type_id"
     t.string   "floor"
     t.float    "height"
-    t.string   "state_id"
+    t.integer  "state_id"
     t.text     "description"
     t.string   "image"
     t.string   "layout"
     t.string   "video"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "category"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20130515104740) do
 
   create_table "city_districts", :force => true do |t|
     t.string   "title"
-    t.string   "city_id"
+    t.integer  "city_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -85,14 +85,14 @@ ActiveRecord::Schema.define(:version => 20130515104740) do
 
   create_table "layouts", :force => true do |t|
     t.string   "image"
-    t.string   "advert_id"
+    t.integer  "advert_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "post_images", :force => true do |t|
     t.string   "image"
-    t.string   "post_id"
+    t.integer  "post_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(:version => 20130515104740) do
 
   create_table "streets", :force => true do |t|
     t.string   "title"
-    t.string   "city_id"
+    t.integer  "city_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
