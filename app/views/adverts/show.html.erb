@@ -64,9 +64,7 @@
 
 
       <ul class="clearing-thumbs small-block-grid-2" data-clearing>
-        <% @advert.advert_images.each if AdvertImage.where(:advert_id => @advert.id.to_s).present? do |image| %>
-            <li><%=link_to (image_tag image.image_url(:small)),image.image_url if image.image_url.present? %>
-        <% end %>
+
       </ul>
 
 
@@ -77,9 +75,7 @@
     <h5 class="title"> <%= link_to 'Планировка', "#panel2" %></h5>
     <div class="content" data-slug="panel2">
       <ul class="clearing-thumbs small-block-grid-2" data-clearing>
-        <% @advert.layouts.each if Layout.where(:advert_id => @advert.id.to_s).present? do |image|  %>
-            <li ><%=link_to (image_tag image.image_url(:small)),image.image_url%>
-        <% end %>
+
       </ul>
 
 

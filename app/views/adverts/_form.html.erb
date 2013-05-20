@@ -94,16 +94,12 @@
     </div>
 
   <div class="field">
-    <%= f.fields_for :advert_images if AdvertImage.where(:advert_id => @advert.id.to_s).present? do |builder| %>
-        <%= render 'advert_image_fields', f: builder %>
-    <% end %>
+
     <%= link_to_add_fields "Add AdvertImage", f, :advert_images %>
   </div>
 
   <div class="field">
-    <%= f.fields_for :layouts if Layout.where(:advert_id => @advert.id.to_s).present? do |builder| %>
-        <%= render 'layout_fields', f: builder %>
-    <% end %>
+
     <%= link_to_add_fields "Add Layout", f, :layouts %>
   </div>
            =----------------
