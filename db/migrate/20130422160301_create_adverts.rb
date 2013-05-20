@@ -3,7 +3,7 @@ class CreateAdverts < ActiveRecord::Migration
     create_table :adverts do |t|
       t.string :title
       t.float :price
-      t.integer :type_id
+      t.string :type_id
       t.string :region_id
       t.string :city_id
       t.string :district
