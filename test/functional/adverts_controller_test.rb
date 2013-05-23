@@ -18,7 +18,7 @@ class AdvertsControllerTest < ActionController::TestCase
 
   test "should create advert" do
     assert_difference('Advert.count') do
-      post :create, advert: { area: @advert.area, city_district_id: @advert.city_district_id, city_id: @advert.city_id, description: @advert.description, district: @advert.district, floor: @advert.floor, height: @advert.height, house: @advert.house, house_type_id: @advert.house_type_id, image: @advert.image, layout: @advert.layout, price: @advert.price, region_id: @advert.region_id, room_number: @advert.room_number, state_id: @advert.state_id, street: @advert.street, title: @advert.title, type_id: @advert.type_id, user_id: @advert.user_id, video: @advert.video }
+      post :create, advert: { area: @advert.area, city_district_id: @advert.city_district_id, city_id: @advert.city_id, description: @advert.description, district: @advert.district, floor: @advert.floor, height: @advert.height, house: @advert.house, house_type_id: @advert.house_type_id, image: @advert.image, layout: @advert.layout, price: @advert.price, region_id: @advert.region_id, room_number: @advert.room_number, state_id: @advert.state_id, streets: @advert.street, title: @advert.title, type_id: @advert.type_id, user_id: @advert.user_id, video: @advert.video }
     end
 
     assert_redirected_to advert_path(assigns(:advert))
@@ -35,7 +35,7 @@ class AdvertsControllerTest < ActionController::TestCase
   end
 
   test "should update advert" do
-    put :update, id: @advert, advert: { area: @advert.area, city_district_id: @advert.city_district_id, city_id: @advert.city_id, description: @advert.description, district: @advert.district, floor: @advert.floor, height: @advert.height, house: @advert.house, house_type_id: @advert.house_type_id, image: @advert.image, layout: @advert.layout, price: @advert.price, region_id: @advert.region_id, room_number: @advert.room_number, state_id: @advert.state_id, street: @advert.street, title: @advert.title, type_id: @advert.type_id, user_id: @advert.user_id, video: @advert.video }
+    put :update, id: @advert, advert: { area: @advert.area, city_district_id: @advert.city_district_id, city_id: @advert.city_id, description: @advert.description, district: @advert.district, floor: @advert.floor, height: @advert.height, house: @advert.house, house_type_id: @advert.house_type_id, image: @advert.image, layout: @advert.layout, price: @advert.price, region_id: @advert.region_id, room_number: @advert.room_number, state_id: @advert.state_id, streets: @advert.street, title: @advert.title, type_id: @advert.type_id, user_id: @advert.user_id, video: @advert.video }
     assert_redirected_to advert_path(assigns(:advert))
   end
 

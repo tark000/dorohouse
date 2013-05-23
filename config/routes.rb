@@ -16,6 +16,8 @@ Dorohouse::Application.routes.draw do
 
   resources :searches
 
+  resources :streets
+
 
 
   resources :companies

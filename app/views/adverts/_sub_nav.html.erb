@@ -1,7 +1,8 @@
 <dl class="sub-nav">
-  <dd class="active"><a href=<%= adverts_path(:rend => "all") %>>all</a></dd>
-  <dd><a href=<%= adverts_path(:rend => "Commercial") %>>Комерческая недвижимость</a></dd>
-  <dd><a href=<%= adverts_path(:rend => "Apartment") %>>Квартиры</a></dd>
-  <dd><a href=<%= adverts_path(:rend => "House") %>>Дома</a></dd>
-  <dd><a href=<%= adverts_path(:rend => "Land") %>>Земля</a></dd>
+  <dt>Filter:</dt>
+  <dd class="active"><%= link_to "Все", adverts_path(:rend => "all") %> </dd>
+  <dd><%= link_to "Комерческая недвижимость", adverts_path(:rend => "Commercial") %></dd>
+  <dd><%= link_to "Квартиры",  adverts_path(:rend => "Apartment")%></dd>
+  <dd><%= link_to "Дома", adverts_path(:rend => "House") %></dd>
+  <dd><%= link_to "Земля", adverts_path(:rend => "Land") %></dd>
 </dl>

@@ -32,8 +32,8 @@
     <%= f.collection_select :city_id, City.order(:title), :id, :title, include_blank: true %>
   </div>
     <div class="field">
-      <%= f.label :street_id %><br />
-      <%= f.grouped_collection_select :street_id, City.order(:title), :streets, :title, :id, :title, include_blank: true %>
+      <%= f.label :street_title %><br />
+      <%= f.text_field :street_title, data: {autocomplete_source: streets_path} %>
     </div>
     <div class="field">
       <%= f.label :city_district_id %><br />

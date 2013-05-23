@@ -13,9 +13,10 @@
           </div>
 
         </div>
+
         <div class="small-8 pull-4 columns" style="border-right: solid 1px #f6f6f6;">
           <div class="large-12 columns" style="margin-bottom: 16px; ">
-            <p>Описание обьекта</p>
+            <p>Описание обьекта</p>      <p><%= @advert.street.title if @advert.street_id.present? %> </p>
             <div class="large-6 columns">
               <p>ID обьявления:</p>
               <p>Тип квартиры:</p>
@@ -34,7 +35,7 @@
               <p><%= @advert.house_type_id %></p>
               <p><%= @advert.room_number %></p>
               <p>N/A</p>
-              <p><%= @advert.price/@advert.area %></p>
+              <p><%= @advert.price%> / <%= @advert.area %></p>
               <p><%= @advert.area %></p>
               <p><%= @advert.function_type.title if @advert.function_type_id? %></p>
               <p>N/A</p>

@@ -46,7 +46,7 @@
               <%= link_to 'Подробнее »', advert %>
               <%= link_to 'Изменить', edit_advert_path(advert) if current_user%>
               <%= link_to 'Удалить', advert, method: :delete, data: { confirm: 'Are you sure?' } if current_user%>
-              <%= advert.id %> <%= advert.function_type.title %>
+              <%= advert.id %> <%= advert.function_type.title if advert.function_type_id?%>
             </div>
 
           </div>

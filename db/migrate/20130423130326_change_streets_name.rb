@@ -1,6 +1,6 @@
 class ChangeStreetsName < ActiveRecord::Migration
   def up
-      rename_column :adverts, :street, :street_id
+      rename_column :adverts, :streets, :street_id
   end
 
   def down
