@@ -4,4 +4,16 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :post_images, allow_destroy: true
   mount_uploader :image, ImageUploader
 
+
+  def next
+    user.photos.where("id > ?", id).first
+  end
+
+  def prev
+    user.photos.where("id < ?", id).first
+  end
+
+
+
+
 end

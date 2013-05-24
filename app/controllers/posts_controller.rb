@@ -21,16 +21,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
 
-    if @post==Post.first
-      @next=Post.where("id > ?", @post.id).first
-      @previous=Post.where("id > ?", @post.id).last
-    elsif @post==Post.last
-      @next=Post.where("id < ?", @post.id).first
-      @previous=Post.where("id < ?", @post.id).last
-    else
-      @next = Post.where("id > ?", @post.id).first
-      @previous=Post.where("id < ?", @post.id).last
-    end
+
+
+
+
 
     respond_to do |format|
       format.html # show.html.erb
