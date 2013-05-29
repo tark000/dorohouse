@@ -1,7 +1,8 @@
 <%=  render "sub_nav" %>
 
-<a href=<%= post_path(post.prev) %>  ><span>Предыдущая</span></a>
-<a href=<%= post_path(post.next) %>  ><span>Следующая</span></a>
+<a href=<%= post_path(previous(@post)) if previous(@post)  %>  ><span>Предыдущая</span></a>
+<a href=<%= post_path(next_post(@post)) if next_post(@post)%>  ><span>Следующая</span></a>
+
 
 <div class="row">
   <div class="small-12 columns">

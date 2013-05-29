@@ -1,12 +1,57 @@
-<%= form_for @advert do |f| %>
-    <div class="field">
-      <%= f.label :title %><br />
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :city_id %><br />
-      <%= f.collection_select :city_id, City.order(:title), :id, :title, include_blank: true %>
-    </div>
 
-    <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+
+  <%= form_tag adverts_path, :method => 'get' do %>
+      <fieldset>
+        <legend>Поиск</legend>
+
+
+
+
+
+      <div class="row">
+        <div class="small-8">
+          <div class="row">
+            <div class="small-4 columns">
+              <label for="right-label" class="right inline">Количество комнат:</label>
+            </div>
+            <div class="small-8 columns">
+              <%= text_field_tag :room_number, params[:room_number] %>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-8">
+          <div class="row">
+            <div class="small-4 columns">
+              <label for="right-label" class="right inline">Стоимость:</label>
+            </div>
+            <div class="small-4 columns">
+              <%= text_field_tag :min_price, params[:min_price], :placeholder=>"min" %>
+            </div>
+            <div class="small-4 columns">
+              <%= text_field_tag :max_price, params[:min_price], :placeholder=>"max" %>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="small-8">
+          <div class="row">
+            <div class="small-4 columns">
+              <label for="right-label" class="right inline">Стоимость:</label>
+            </div>
+            <div class="small-4 columns">
+              <%= text_field_tag :min_area, params[:min_area], :placeholder=>"min" %>
+            </div>
+            <div class="small-4 columns">
+              <%= text_field_tag :max_area, params[:min_area], :placeholder=>"man" %>
+            </div>
+          </div>
+        </div>
+
+
+
+        <%= submit_tag "Search", :id => nil %></div>
+
+      </fieldset>
+  <% end %>

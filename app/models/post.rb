@@ -5,15 +5,5 @@ class Post < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
 
-  def next
-    user.photos.where("id > ?", id).first
-  end
-
-  def prev
-    user.photos.where("id < ?", id).first
-  end
-
-
-
 
 end

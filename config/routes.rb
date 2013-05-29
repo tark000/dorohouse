@@ -25,7 +25,9 @@ Dorohouse::Application.routes.draw do
     resources :adverts
   end
 
-  resources :adverts
+  resources :adverts do
+    get 'search', :on => :collection
+  end
 
 
 

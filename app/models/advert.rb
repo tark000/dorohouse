@@ -16,14 +16,17 @@ class Advert < ActiveRecord::Base
 
   scope :advert_category, lambda { |*category| where(:category => category) }
 
-  def self.search(search)
-    if search
-      where('id = ?', "#{search}")
-    else
-      scoped
-    end
-  end
 
+  scope :search, lambda{ |b = nil| where('id = ?', "#{b}") if b.present? }
+
+  scope :category_search, lambda{ |b| where(:category => b)}
+  scope :city_search , lambda{|b| where(:city_id => b)}
+  scope :room_number_search, lambda{|b| where(:room_number => b)}
+  scope :state_search, lambda{|b| where(:state_id=> b)}
+  scope :min_price_search, lambda{|b| where("price >= ?", b)}
+  scope :max_price_search, lambda{|b| where("price <= ?", b)}
+  scope :min_area_search, lambda{|b| where("area >= ?", b)}
+  scope :max_area_search, lambda{|b| where("area <= ?", b)}
 
 
   def street_title
