@@ -1,9 +1,6 @@
-
-
   <%= form_tag adverts_path, :method => 'get' do %>
       <fieldset>
         <legend>Поиск</legend>
-
 
 
 
@@ -12,10 +9,45 @@
         <div class="small-8">
           <div class="row">
             <div class="small-4 columns">
+              <label for="right-label" class="right inline">Категория:</label>
+            </div>
+            <div class="small-8 columns">
+
+              <%= select_tag(:category, options_for_select(["Commercial","Apartment","House","Land"], 2), include_blank: true) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-8">
+          <div class="row">
+            <div class="small-4 columns">
+              <label for="right-label" class="right inline">Состояние:</label>
+            </div>
+            <div class="small-8 columns">
+
+              <%= select_tag(:state, options_for_select(@st, 2), include_blank: true) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-8">
+          <div class="row">
+            <div class="small-4 columns">
               <label for="right-label" class="right inline">Количество комнат:</label>
             </div>
             <div class="small-8 columns">
               <%= text_field_tag :room_number, params[:room_number] %>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-8">
+          <div class="row">
+            <div class="small-4 columns">
+              <label for="right-label" class="right inline">Этаэж:</label>
+            </div>
+            <div class="small-8 columns">
+              <%= text_field_tag :floor, params[:floor] %>
             </div>
           </div>
         </div>

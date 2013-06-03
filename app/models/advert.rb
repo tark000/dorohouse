@@ -22,6 +22,7 @@ class Advert < ActiveRecord::Base
   scope :category_search, lambda{ |b| where(:category => b)}
   scope :city_search , lambda{|b| where(:city_id => b)}
   scope :room_number_search, lambda{|b| where(:room_number => b)}
+  scope :floor_search, lambda{|b| where(:floor => b)}
   scope :state_search, lambda{|b| where(:state_id=> b)}
   scope :min_price_search, lambda{|b| where("price >= ?", b)}
   scope :max_price_search, lambda{|b| where("price <= ?", b)}
